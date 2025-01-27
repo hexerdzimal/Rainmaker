@@ -41,9 +41,9 @@ Welcome to the **Rainmaker**, a small Python tool designed to demonstrate how ea
 ### Run the program:
 
 After navigating to the project folder, simply run the script:
-
+```bash
 python rainmaker.py
-
+```
 ### Enter your data:
 
 The program will prompt you to enter names and associated dates. You can enter one name per line, followed by its associated dates (e.g., John: 15.01.1990, 03.07.1992).
