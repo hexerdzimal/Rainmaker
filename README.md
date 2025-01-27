@@ -1,6 +1,6 @@
-# Rainbow Table Maker
+# Rainmaker
 
-Welcome to the **Rainbow Table Maker**, a small Python tool designed to demonstrate how easily password combinations can be generated and evaluated. This tool shows how simple information, such as names, places, and dates, can be used to create massive amounts of potential password combinations that can be cracked easily using modern hashing techniques.
+Welcome to the **Rainmaker**, a small Python tool designed to demonstrate how easily password combinations can be generated and evaluated. This tool shows how simple information, such as names, places, and dates, can be used to create massive amounts of potential password combinations that can be cracked easily using modern hashing techniques.
 
 ## Features
 
