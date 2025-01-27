@@ -1,6 +1,7 @@
 # Rainmaker
 
 Welcome to the **Rainmaker**, a small Python tool designed to demonstrate how easily password combinations can be generated and evaluated. This tool shows how simple information, such as names, places, and dates, can be used to create massive amounts of potential password combinations that can be cracked easily using modern hashing techniques.
+Despite rainbowtables are not the state of the art anymore, it is crucial to understand how EASY it is to get a mass of potential combinations and HOW FAST this can be done.  
 
 ## Features
 
