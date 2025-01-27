@@ -18,13 +18,13 @@ Welcome to the **Rainmaker**, a small Python tool designed to demonstrate how ea
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/Rainbow-Table-Maker.git
+   git clone https://github.com/hexerdzimal/Rainmaker.git
    ```
 
 2. Navigate to the project folder:
 
     ```bash
-    cd Rainbow-Table-Maker
+    cd Rainmaker
     ```
 
 3. Install the required Python dependencies (if any):
