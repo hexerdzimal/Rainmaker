@@ -137,16 +137,19 @@ def generate_combinations(name_date_dict):
                     combinations.append(f"{name_variant}{sep1}{day}{sep2}{month}{sep3}{year}")
                     combinations.append(f"{year}{sep1}{month}{sep2}{day}{sep3}{name_variant}")
                     combinations.append(f"{name_variant}{sep1}{year}{sep2}{day}{sep3}{month}")
+                    combinations.append(f"{month}{sep1}{year}{sep2}{day}{sep3}{name_variant}")
+                    combinations.append(f"{month}{sep1}{year}{sep2}{name_variant}{sep3}{day}")
             
             
             # Generate combinations with partial date components
             for sep1, sep2 in product(separators, repeat=2):
                 combinations.append(f"{day}{sep1}{month}{sep2}{name}")  # e.g., 15-07-Anna
+                combinations.append(f"{day}{sep1}{year}{sep2}{name}")  # e.g., 15-07-Anna
                 combinations.append(f"{month}{sep1}{day}{sep2}{name}")  # e.g., 07-15-Anna
-                combinations.append(f"{name}{sep1}{day}{sep2}{month}")  # e.g., Anna-15-07
-                combinations.append(f"{year}{sep1}{name}")  # e.g., 2023-Anna
-                combinations.append(f"{name}{sep1}{year}")  # e.g., Anna-2023
                 combinations.append(f"{month}{sep1}{year}{sep2}{name}")  # e.g., 07-2023-Anna
+                combinations.append(f"{name}{sep1}{day}{sep2}{month}")  # e.g., Anna-15-07
+                combinations.append(f"{name}{sep1}{year}")  # e.g., Anna-2023
+                combinations.append(f"{year}{sep1}{name}")  # e.g., 2023-Anna               
                 combinations.append(f"{year}{sep1}{month}{sep2}{name}")  # e.g., 2023-07-Anna
 
             # Individual date parts combined with names
