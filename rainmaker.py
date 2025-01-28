@@ -35,7 +35,7 @@ def greeting():
     print("""
                     *******************************************************
                     *                                                     *
-                    *            Welcome to the Rainbow Table Maker!      *
+                    *            Welcome to the Rain(bow Table )Maker!    *
                     *            A tool to demonstrate password           *
                     *            combinations from names and dates.       *
                     *                                                     *
