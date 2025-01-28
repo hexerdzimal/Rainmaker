@@ -266,10 +266,6 @@ def main():
     # Display summary
     print(f"\n\n{len(combinations)} combinations and {len(hashes)} hashes were created in {elapsed_time:.2f} seconds.")
 
-    # Display the first 10 results for preview
-    print("\nResults (first 10 entries):")
-    for plaintext, hash_value in list(zip(combinations, hashes))[:10]:
-        print(f"{plaintext} -> {hash_value}")
 
     # Save results to a file
     save_to_file(combinations, hashes)
