@@ -157,7 +157,7 @@ def generate_combinations(name_date_dict):
             combinations.append(f"{name}{month}")  # e.g., Anna07
             combinations.append(f"{name}{year}")  # e.g., Anna2023
 
-    # Remove duplicates by converting to a set and back to a list
+    # Remove duplicates (to be sure ) by converting to a set and back to a list
     return list(set(combinations))
 
 
