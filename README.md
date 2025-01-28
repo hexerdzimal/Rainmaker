@@ -1,7 +1,14 @@
 # Rainmaker
 
-Welcome to the **Rainmaker**, a small Python tool designed to demonstrate how easily password combinations can be generated and evaluated. This tool shows how simple information, such as names, places, and dates, can be used to create massive amounts of potential password combinations that can be cracked easily using modern hashing techniques.
-Despite rainbowtables are not the state of the art anymore, it is crucial to understand how EASY it is to get a mass of potential combinations and HOW FAST this can be done.  
+Welcome to the **Rainmaker**, a small Python tool designed to demonstrate how easily password combinations can be generated and evaluated. This tool shows how simple information, such as names, places, and dates, can be used to create massive amounts of potential password combinations that can be cracked easily using modern hashing techniques, building a
+rainbowtable and a target specific dictionary at the same time.
+
+Rainbow tables were once a widely used method to quickly reverse hash values into plaintext passwords using precomputed tables.
+Although modern security techniques like salting have rendered rainbow tables less effective, the underlying issue remains: weak or predictable passwords.
+Attackers often leverage OSINT (Open Source Intelligence) to gather personal information, such as pet names, birth dates, or the names of spouses,
+making passwords based on such information easy to guess. Nowadays, attackers rely on alternative methods like dictionary attacks, credential stuffing,
+or social engineering to obtain passwords. The key takeaway is that if a password can be guessed using OSINT, attackers don’t need advanced techniques.
+The solution lies not only in technical safeguards, such as salting, but also in the use of strong, random passwords that do not rely on personal information. 
 
 ## Features
 
