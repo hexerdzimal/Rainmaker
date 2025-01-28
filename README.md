@@ -92,3 +92,33 @@ License
 This program is licensed under the GNU General Public License version 3. See the LICENSE file for more details.
 
 Feel free to contribute or use this tool for educational purposes. 
+
+## This is wrong!
+
+Do you think it’s wrong to publish a tool like this, knowing it could enable bad people to do bad things?
+
+When I first started learning about IT security, I quickly realized how little I actually knew. Who could have explained these things to me? Nobody. Reading about them or watching videos online or on television is like a drop of water in the desert—nice to have, but nowhere near enough.
+
+I started experimenting with things just to understand them, and I was often shocked at how easy it is to exploit vulnerabilities and how naive people can be.
+
+As a former martial arts trainee (Wing Tsun), I know that the best fight is the one you can avoid. And you can avoid most fights when you know how to stand your ground and protect yourself. A good martial arts trainer, especially in far-eastern traditions, teaches students not to harm others but to use their knowledge to do good, like protecting themselves and others.
+
+If someone wants to harm others, they will find a way—regardless of who their trainer is or even if they have no trainer at all.
+
+Now, let’s apply this principle to IT security.
+If someone is truly determined to crack your passwords, they will find a way. And this tool? It’s not that powerful. There are tools out there that outperform it by far.
+
+But you and I can use this tool to demonstrate how dangerous it is to rely on passwords that (or parts of it) can be easily discovered via OSINT (Open Source Intelligence). We can show people that tools like this can generate over 100,000 combinations of names and dates in under five seconds. We can open people’s eyes. We can help them protect themselves by revealing the “dark side.”
+
+I’m not a fan of the phrase, “Weapons don’t kill people; people kill people,” but I have to admit, there’s truth in it. Long before guns were invented, people were stabbing each other with swords. Long before swords, they were smashing heads with stones. People will always find ways to harm each other.
+
+But there are also those who choose to use their skills and knowledge to help others—those who show people how the “bad guys” operate so they can defend themselves.
+So maybe you want to join me and show people what bad people do. Maybe you want to join me in teaching IT security. If you want to contribute, text me!
+
+I hope you will use this tool wisely.
+Thanks for reading
+
+– Mat
+
+
+
