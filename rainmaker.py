@@ -19,6 +19,7 @@ import hashlib
 from time import time
 from itertools import product
 
+generated_file = None
 
 # Function to display a greeting message
 def greeting():
@@ -42,15 +43,15 @@ def greeting():
                     *******************************************************
             """)
     print("""
-    This program generates hash values from names and flexible date combinations.
-    It is designed to show how easily massive password combinations can be created
-    by using simple information like names, places, and dates — often found through 
-    OSINT on social media profiles.
+        This program generates hash values from names and flexible date combinations.
+        It is designed to show how easily massive password combinations can be created
+        by using simple information like names, places, and dates — often found through 
+        OSINT on social media profiles.
           
-    You can use it in security training. Use it to understand and show how easy it
-    is to crack weak passwords, especially when people use predictable information
-    like important dates or names for their passwords.
-    ---------------------------------------------------------------
+        You can use it in security training. Use it to understand and show how easy it
+        is to crack weak passwords, especially when people use predictable information
+        like important dates or names for their passwords.
+        ---------------------------------------------------------------
     """)
 
 
@@ -176,9 +177,9 @@ def calculate_hash(plaintext):
     """
     Calculates the SHA-256 hash for a given plaintext.
     """
-    h = hashlib.sha256()
-    h.update(plaintext.encode("utf-8"))  # Convert plaintext to bytes and hash it
-    return h.hexdigest()
+    hash = hashlib.sha256()
+    hash.update(plaintext.encode("utf-8"))  # Convert plaintext to bytes and hash it
+    return hash.hexdigest()
 
 
 # Function to display a progress bar in the console
@@ -197,6 +198,8 @@ def save_to_file(combinations, hashes, filename="rainbow_table"):
     Saves the generated combinations and their hash values to a file.
     User can select the output format: Tabular, JSON, or CSV.
     """
+    global generated_file
+
     print("\nChoose output format:")
     print("1: Tabular (plain text)")
     print("2: JSON")
@@ -211,18 +214,21 @@ def save_to_file(combinations, hashes, filename="rainbow_table"):
             f.write("-" * 105 + "\n")
             for plaintext, hash_value in zip(combinations, hashes):
                 f.write(f"{plaintext:<40} | {hash_value:<64}\n")
+        generated_file = filename
     elif choice == "2":
         filename += ".json"
         import json
         data = [{"combination": plaintext, "hash": hash_value} for plaintext, hash_value in zip(combinations, hashes)]
         with open(filename, "w") as f:
             json.dump(data, f, indent=4)
+        generated_file = filename
     elif choice == "3":
         filename += ".csv"
         with open(filename, "w") as f:
             f.write("Combination,Hash\n")
             for plaintext, hash_value in zip(combinations, hashes):
                 f.write(f"{plaintext},{hash_value}\n")
+        generated_file = filename
     else:
         print("Invalid choice. Saving as default tabular format.")
         filename += ".txt"
@@ -232,18 +238,18 @@ def save_to_file(combinations, hashes, filename="rainbow_table"):
             f.write("-" * 105 + "\n")
             for plaintext, hash_value in zip(combinations, hashes):
                 f.write(f"{plaintext:<40} | {hash_value:<64}\n")
+        generated_file = filename
 
     print(f"Results have been saved to '{filename}'.")
 
-# Main function to execute the program
-def main():
-    greeting()  # Show greeting message
+def generation():
 
     # User input for names and dates
     name_date_dict = input_names_and_dates()
 
     # Generate combinations
     print("\nGenerating combinations...")
+    start_time = time() # Record start time
     combinations = generate_combinations(name_date_dict)
 
     if not combinations:
@@ -253,8 +259,7 @@ def main():
     print(f"\n{len(combinations)} combinations were generated.")
 
     # Calculate hashes with progress bar
-    print("\nCalculating hashes...")
-    start_time = time()  # Record start time
+    print("\nCalculating hashes...") 
     hashes = []
     total = len(combinations)
     for i, combination in enumerate(combinations, start=1):
@@ -269,6 +274,39 @@ def main():
 
     # Save results to a file
     save_to_file(combinations, hashes)
+
+def search_in_file():
+    if not generated_file:
+        print("No generated file found. Run option 1 first.")
+        return
+    search_term = input("Enter password to search for: ").strip()
+    with open(generated_file, "r") as f:
+        for line in f:
+            if search_term in line:
+                print(f"Found: {line.strip()}")
+                return
+    print("Password not found in file.")
+    
+
+# Main function to execute the program
+def main():
+    greeting()  # Show greeting message
+    while True:
+        print("\nMenu:")
+        print("1: Generate Rainbow Table")
+        print("2: Search for a password")
+        print("3: Exit")
+        choice = input("Enter choice (1/2/3): ").strip()
+        if choice == "1":
+            generation()
+        elif choice == "2":
+            search_in_file()
+        elif choice == "3":
+            print("Exiting program.")
+            break
+        else:
+            print("Invalid choice. Try again.")
+    
 
 
 # Entry point of the program
