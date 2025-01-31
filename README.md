@@ -51,7 +51,12 @@ The solution lies not only in technical safeguards, such as salting, but also in
 After navigating to the project folder, simply run the script:
 ```bash
 python rainmaker.py
+
 ```
+### Create a list:
+
+Choose "1" in the menu
+
 ### Enter your data:
 
 The program will prompt you to enter names and associated dates. You can enter one name per line, followed by its associated dates (e.g., John: 15.01.1990, 03.07.1992).
@@ -63,9 +68,17 @@ After generating combinations and calculating hashes, the program will ask you t
 - 2: JSON
 - 3: CSV
 
-### View the results:
+### Save the results:
 
 Once the program finishes, the results will be saved to a file (e.g., rainbow_table.txt, rainbow_table.json, or rainbow_table.csv) based on your choice.
+
+### Look up possible password:
+
+Choose "2" in the menu
+
+### Enter password you want to look for:
+
+Enter a password and rainmaker will search the file you created for this password (note: rainmaker wasn't designed to create EVERY possible combination but a lot.)
 
 ## Example
 
